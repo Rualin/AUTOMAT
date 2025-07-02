@@ -1,0 +1,28 @@
+ultralytics.ultralytics.utils.metrics.Metric - optional
+
+ultralytics.ultralytics.utils.metrics.DetMetrics:
+	__init__
+	update_stats - optional
+	keys
+	mean_results
+	class_result - optional
+	curves - optional
+	curves_results - optional
+	summary
+
+ultralytics.ultralytics.models.yolo.detect.DetectionValidator:
+	__init__
+	__init__metrics - optional
+	get_desc
+	update_metrics
+preds = [{"bboxes": x[:, :4], "conf": x[:, 4], 
+"cls": x[:, 5]} for x in outputs]
+where outputs = result of nms
+batch = {"cls": cls, "bboxes": bbox, "ori_shape": ori_shape, 
+"imgsz": imgsz, "ratio_pad": ratio_pad}
+	finalize_metrics - optional
+	get_stats
+	print_results - optional
+
+ultralytics.ultralytics.models.yolo.detect.DetectionTrainer:
+	get_validator
